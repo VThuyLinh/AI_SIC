@@ -8,8 +8,8 @@ def connectdatabase():
     connection=mysql.connector.connect(
         host="localhost",
         database="FaceId",
-        user="root",
-        password="Admin@123"
+        user="root", #tên user trong mysql
+        password="Admin@123" #password vào mysql
     )
     return connection
 
@@ -19,7 +19,7 @@ def insertOrUpdate(id,name):
     query = "select * from people where id ="+str(id)
     cursor=con.cursor()
     cursor.execute(query)
-    records=cursor.fetchall()
+    records=cursor.fetchall() #.fetchall() là Phương pháp này lấy tất cả (hoặc tất cả các hàng còn lại) của một tập kết quả truy vấn và trả về một danh sách các bộ. Nếu không còn hàng nào nữa, nó sẽ trả về một danh sách trống.
     isRecorrdExit = 0
     for row in records:
         isRecorrdExit = 1

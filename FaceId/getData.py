@@ -4,14 +4,14 @@ import os
 import queryDB as db
 
 
-# nhập id và name người mình muốn add mặt vào
+# nhập id và name người mình muốn thêm mặt vào cơ sở dữ liệu
 id = input("Nhập Id :")
 name = input("Nhập Name :")
-# gọi đến hàm insert vào db để lưu trữ thông tin
+# gọi đến hàm insert vào database để lưu trữ thông tin
 db.insertOrUpdate(id,name)
 
 
-# Khởi tạo webcam và đặt độ phân giải của nó thành 1280x720
+# Khởi tạo webcam và đặt độ phân giải thành 1280x720
 cam = cv2.VideoCapture(0)
 cam.set(3,1280)
 cam.set(4,720)
@@ -23,7 +23,7 @@ detector=cv2.CascadeClassifier("./libs/haarcascade_frontalface_default.xml")
 
 
 
-# biến này sẽ được sử dụng để theo dõi số lượng ảnh khuôn mặt được chụp cho người dùng này.
+# biến này khai báo để theo dõi số lượng ảnh khuôn mặt được chụp cho người dùng này.
 sampleNum=0
 
 
@@ -50,12 +50,12 @@ while(True):
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-    # nếu số ảnh lưu được đủ 250 ảnh thì xe dừng chương trình
+    # nếu số ảnh lưu được đủ 250 ảnh thì sẽ dừng chương trình
     elif sampleNum>250:
         break
 
 
-# giải phóng máy ảnh và phá hủy tất cả các cửa sổ do chương trình tạo ra
+# giải phóng máy ảnh và đóng tất cả các cửa sổ do chương trình tạo ra
 cam.release()
 cv2.destroyAllWindows()
 

@@ -7,7 +7,7 @@ from PIL import Image
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 #  đường dẫn đến thư mục chứa hình ảnh khuôn mặt.
 path='dataSet'
-# path = 'C:/Users/Admin/New folder (2)/LAP_TRINH/Python/FaceId/dataSet'
+# path = 'C:/Users/ThuyLinh/New folder (2)/LAP_TRINH/Python/FaceId/dataSet'
 
 
 # Hàm này đọc các hình ảnh khuôn mặt từ thư mục

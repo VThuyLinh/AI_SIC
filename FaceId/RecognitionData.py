@@ -16,7 +16,7 @@ cam.set(4,720)
 face_cascade=cv2.CascadeClassifier("libs/haarcascade_frontalface_default.xml")
 # tạo ra một đối tượng nhận dạng khuôn mặt bằng thuật toán LBPH
 recognizer = cv2.face.LBPHFaceRecognizer_create()
-# dùng để đọc dữ liệu được trani từ tệp
+# dùng để đọc dữ liệu được training từ tệp
 recognizer.read('recognizer/trainningData.yml')
 imgBackground = cv2.imread('image/background.png')
 
@@ -35,7 +35,7 @@ for path in modePathList:
 
 # Vòng lặp vô hạn để lấy liên tục hình ảnh từ camera.
 while(True):
-    # cam.read() là hàm để đọc hình ảnh từ camera và lưu trữ vào biến frame.
+    # cam.read() là hàm để đọc hình ảnh từ camera và lưu trữ vào biến có tên là frame.
     ret, frame = cam.read()
     # đổi kích thước của hình ảnh.
     frame_resized = cv2.resize(frame, (732, 720))
@@ -60,7 +60,7 @@ while(True):
             if confidence < 40 :
                 # gọi đến hàm getProfile để lấy thông tin 
                 profile=db.getProfile(id)
-                # nếu profile mà không bằng rỗng thì hiển thị tên
+                # nếu profile mà khác rỗng thì hiển thị tên
                 if(profile!=None):
                     # hiển thị ra tên trong khunng cam
                     cv2.putText(imgBackground, "" + str(profile[1]), (x + 10 ,y + h + 30), fontface, 1, (0,255,0),2)
