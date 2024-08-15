@@ -3,7 +3,7 @@ import os
 import numpy as np
 from PIL import Image
 
-# tạo ra một đối tượng nhận dạng khuôn mặt bằng thuật toán LBPH
+# tạo ra một đối tượng nhận dạng khuôn mặt bằng thuật toán LBPH (thuật toán biểu đồ mẫu nhị phân cục bộ)
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 #  đường dẫn đến thư mục chứa hình ảnh khuôn mặt.
 path='dataSet'

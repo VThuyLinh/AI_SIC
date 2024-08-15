@@ -51,7 +51,7 @@ while(True):
         break
 
     # nếu số ảnh lưu được đủ 250 ảnh thì sẽ dừng chương trình
-    elif sampleNum>250:
+    elif sampleNum>15:
         break
 
 
